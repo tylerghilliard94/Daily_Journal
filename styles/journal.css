@@ -1,0 +1,20 @@
+html {
+    background-color: rgb(218, 196, 163);
+}
+#flex-group {
+    display: flex;
+    
+}
+
+form {
+    flex-direction: column;
+    
+}
+
+#button {
+    flex-direction: column;
+}
+
+#conceptsCovered {
+    width: auto;
+}
