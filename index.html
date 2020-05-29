@@ -5,43 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="styles/journal.css" >
+    <script src="scripts/journal.js"></script>
 </head>
 <body>
-    <h1>Daily Journal</h1>
-    <div id ="flex-group">
-        <form action="">
-            <fieldset id="date">
-                <label for="journalDate">Date of entry</label>
-                <br><input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-    
-     
-            <fieldset id="concepts">
-                <label for="conceptsCovered">Concepts covered</label>
-                <br><input type="text" name="conceptsCovered" id="conceptsCovered">
-            </fieldset>
+    <div id="wrapper">
+        <div id ="flex-group">
+            <h1>Daily Journal</h1>
        
-       
-            <fieldset id="journal"> 
-                <label for="journalEntry">Journal Entry</label>
-                <br><textarea rows="5" cols="22" name="journalEntry" placeholder="How was your day..."></textarea>
-            </fieldset>
-     
+            <form action="">
+                <fieldset id="date">
+                    <label for="journalDate">Date of entry</label>
+                    <br><input type="date" name="journalDate" id="journalDate">
+                </fieldset>
         
-            <fieldset id="mood">
-                <label for="Mood">Mood of the day</label>
-                <br><select type="" name="mood" id="mood">
-                    <option value="sad">sad</option>
-                    <option value="happy">happy</option>
-                    <option value="angry">angry</option>
-                    <option value="anxious">anxious</option>
-                    <option value="depressed">depressed</option>
-                </select>
-            </fieldset>
-        </form>
         
+                <fieldset id="concepts">
+                    <label for="conceptsCovered">Concepts covered</label>
+                    <br><input type="text" name="conceptsCovered" id="conceptsCovered">
+                </fieldset>
+        
+        
+                <fieldset id="journal"> 
+                    <label for="journalEntry">Journal Entry</label>
+                    <br><textarea rows="5" cols="22" name="journalEntry" placeholder="How was your day..."></textarea>
+                </fieldset>
+        
+            
+                <fieldset id="mood">
+                    <label for="Mood">Mood of the day</label>
+                    <br><select type="" name="mood" id="mood">
+                        <option value="sad">sad</option>
+                        <option value="happy">happy</option>
+                        <option value="angry">angry</option>
+                        <option value="anxious">anxious</option>
+                        <option value="depressed">depressed</option>
+                    </select>
+                </fieldset>
+            </form>
+
+            <input type="submit" value="Record Daily Journal" id="button">
+        </div>
     </div>
-        <input type="submit" value="Record Daily Journal" id="button">
        
 </body>
 </html>
