@@ -8,6 +8,10 @@ html {
     justify-content: center;
    
 }
+#titleJournal {
+    margin-left: .5vw;
+}
+
 #flex-group{
     flex-direction: column;
 }
