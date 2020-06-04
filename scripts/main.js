@@ -1,1 +1,5 @@
-journalList();
+getJournalData().then(
+    () => {
+        journalList();
+    }
+)
