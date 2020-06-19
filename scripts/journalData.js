@@ -1,6 +1,4 @@
-var journalDataArray = [
 
-]
 
 // const getJournalData = () => {
 //     return fetch("http://localhost:8088/entries").then(
@@ -18,7 +16,13 @@ var journalDataArray = [
 const API = {
     getJournalEntries () {
         return fetch("http://localhost:8088/entries")
-        .then(response => response.json())
+        .then(response => response.json()) 
+   
+},
+    deleteJournalEntries(target) {
+        return fetch(`http://localhost:8088/entries/${target}`, {
+            method: "DELETE"
+        })
     }
 }
 

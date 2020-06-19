@@ -12,6 +12,7 @@ const journalConverter = (journalObject) => {
         ${journalObject.Date}<br>
         Mood: <strong>${journalObject.Mood}</strong>
     </p>
+    <button type="submit" name="delete-buttons" value="delete--${journalObject.id}">Delete</button>
     </section>`
 
     
@@ -30,7 +31,7 @@ saveButton.addEventListener("click", clickEvent => {
     const moodEntry = document.querySelector(".journalMood")
         if (contentEntry.value.length < 250) {
             if (dateEntry.value !== "" && conceptsEntry.value !== "" && contentEntry.value !== "" && moodEntry.value !== "") {
-                saveObject = entryFactory(dateEntry.value, conceptsEntry.value, contentEntry.value, moodEntry.value)
+                let saveObject = entryFactory(dateEntry.value, conceptsEntry.value, contentEntry.value, moodEntry.value)
                 save.saveJournalEntry(saveObject)
             } else {
                 alert("All Inputs must be filled out to save an entry!")
