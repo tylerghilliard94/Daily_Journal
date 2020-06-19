@@ -9,3 +9,5 @@ const journalConverter = (journalObject) => {
     </section>`
     return journalHTMLRepresentation
 }
+
+export default journalConverter

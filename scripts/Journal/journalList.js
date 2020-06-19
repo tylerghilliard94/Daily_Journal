@@ -1,9 +1,13 @@
-const journalList = () => {
+import journalConverter from "./journal.js"
 
-    for (const currentJournalObject of journalDataArray) {
+const journalList = (allEntries) => {
+
+    for (const currentJournalObject of allEntries) {
         const journalHTML = journalConverter(currentJournalObject)
     
         const journalArticleElement = document.querySelector(".entryLog")
         journalArticleElement.innerHTML += journalHTML
     }
 }
+
+export default journalList
