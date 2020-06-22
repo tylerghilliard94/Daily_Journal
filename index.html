@@ -13,6 +13,7 @@
             <h1 id="titleJournal">Daily Journal</h1>
        
             <form action="">
+                <input type="hidden" id="entryId" value="" />
                 <fieldset id="date">
                     <label for="journalDate">Date of entry</label>
                     <br><input type="date" name="journalDate" id="journalDate" class="journalDate">
@@ -48,14 +49,16 @@
     </div>
     <fieldset>
         <legend>Mood:</legend>
-        <input type="radio" id="happy" name="mood" value="happy">
+        <input type="radio" id="happy" name="moods" value="happy">
         <label for="Happy">Happy</label><br>
-        <input type="radio" id="angry" name="mood" value="angry">
+        <input type="radio" id="angry" name="moods" value="angry">
         <label for="Angry">Angry</label><br>
-        <input type="radio" id="anxious" name="mood" value="anxious">
+        <input type="radio" id="anxious" name="moods" value="anxious">
         <label for="Anxious">Anxious</label>
-        <input type="radio" id="sad" name="mood" value="sad">
+        <input type="radio" id="sad" name="moods" value="sad">
         <label for="Sad">Sad</label>
+        <input type="radio" id="Full--List" name="moods" value="Full List">
+        <label for="Full List">Full List</label>
     </fieldset>
     <article class="entryLog">
         

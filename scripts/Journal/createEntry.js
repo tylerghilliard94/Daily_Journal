@@ -1,5 +1,5 @@
 import API from "../journalData.js"
-import journalList from "./journalList.js"
+import {journalList, filterConfirmation} from "./journalList.js"
 
 const entryFactory = (date, concepts, content, mood) => {
     return {
