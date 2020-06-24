@@ -1,4 +1,4 @@
-import journalConverter from "./journal.js"
+import {journalConverter, selectionConverter} from "./journal.js"
 import API from "../journalData.js"
 let filterConfirmation = false
 const updateFormFields = (entryID) => {
@@ -8,18 +8,28 @@ const updateFormFields = (entryID) => {
     const entryContentInput = document.querySelector(".journalContent")
     const entryMoodInput = document.querySelector(".journalMood")
 
-    fetch(`http://localhost:8088/entries/${entryID}`)
+    fetch(`http://localhost:8088/entries/${entryID}?_expand=moods`)
         .then(response => response.json())
         .then(entry => {
             hiddenEntryId.value = entry.id
             entryDateInput.value = entry.Date
             entryConceptsInput.value = entry.Concepts
             entryContentInput.value = entry.Content
-            entryMoodInput.value = entry.Mood
+            entryMoodInput.value = entry.moods.mood
         })
 
 }
 
+
+const selectionList = (selections) => {
+    const selectionElement = document.querySelector(".journalMood")
+for (let select of selections) {
+    const selectionHTML = selectionConverter(select)
+
+    
+    selectionElement.innerHTML += selectionHTML
+}
+}
 const journalList = (allEntries, filtered) => {
     const journalArticleElement = document.querySelector(".entryLog")
     journalArticleElement.innerHTML = ""
@@ -48,9 +58,9 @@ const journalList = (allEntries, filtered) => {
                         let filteredJournal = response.filter(filter => {
                             return filter.Mood === allEntries[0].Mood})
 
-                        journalList(filteredJournal)
+                        journalList(filteredJournal, "yes")
                     }else {
-                        journalList(response)
+                        journalList(response, "no")
                     }
                     })
             }
@@ -74,4 +84,4 @@ const journalList = (allEntries, filtered) => {
 
 
 
-export {journalList, filterConfirmation}
+export {journalList, filterConfirmation, selectionList}

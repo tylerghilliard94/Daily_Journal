@@ -1,6 +1,6 @@
 import {entryFactory, save} from "./createEntry.js"
 import API from "../journalData.js"
-import {journalList, filterConfirmation} from "./journalList.js"
+import {journalList, filterConfirmation, selectionList} from "./journalList.js"
 
 let saveObject = {}
 
@@ -10,7 +10,7 @@ const journalConverter = (journalObject) => {
     <p> 
         ${journalObject.Content}<br>
         ${journalObject.Date}<br>
-        Mood: <strong>${journalObject.Mood}</strong>
+        Mood: <strong>${journalObject.moods.mood}</strong>
     </p>
     <button type="submit" name="delete-buttons" value="delete--${journalObject.id}">Delete</button>
     <button name="edit--button" value="editEntry--${journalObject.id}">Edit Entry</button>
@@ -21,6 +21,13 @@ const journalConverter = (journalObject) => {
     return journalHTMLRepresentation
 }
 
+const selectionConverter = (selection) => {
+    const selectionHTMLRepresentation = `
+        <option value="${selection.mood}">${selection.mood}</option>`
+
+        return selectionHTMLRepresentation
+                      
+}
 
 const clearTheDom = () => {
     const dateEntry = document.querySelector(".journalDate")
@@ -70,4 +77,4 @@ saveButton.addEventListener("click", clickEvent => {
 
 
 
-export default journalConverter
+export {journalConverter, selectionConverter}
