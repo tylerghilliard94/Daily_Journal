@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daily Journal</title>
     <link rel="stylesheet" type="text/css" href="styles/journal.css" >
     
 </head>
@@ -13,6 +13,7 @@
             <h1 id="titleJournal">Daily Journal</h1>
        
             <form action="">
+                <input type="hidden" id="entryId" value="" />
                 <fieldset id="date">
                     <label for="journalDate">Date of entry</label>
                     <br><input type="date" name="journalDate" id="journalDate" class="journalDate">
@@ -34,29 +35,35 @@
                 <fieldset id="mood">
                     <label for="Mood">Mood of the day</label>
                     <br><select type="" name="mood" id="mood" class="journalMood">
-                        <option value="sad">sad</option>
-                        <option value="happy">happy</option>
-                        <option value="angry">angry</option>
-                        <option value="anxious">anxious</option>
-                        <option value="depressed">depressed</option>
+                        
                     </select>
                 </fieldset>
             </form>
 
-            <input type="submit" value="Record Daily Journal" id="button" class="saveButton">
+            <input type="button" value="Record Daily Journal" id="button" class="saveButton">
         </div>
     </div>
-    <fieldset>
-        <legend>Mood:</legend>
-        <input type="radio" id="happy" name="mood" value="happy">
-        <label for="Happy">Happy</label><br>
-        <input type="radio" id="angry" name="mood" value="angry">
-        <label for="Angry">Angry</label><br>
-        <input type="radio" id="anxious" name="mood" value="anxious">
-        <label for="Anxious">Anxious</label>
-        <input type="radio" id="sad" name="mood" value="sad">
-        <label for="Sad">Sad</label>
-    </fieldset>
+    <div>
+        <fieldset>
+            <legend>Mood:</legend>
+            <input type="radio" id="happy" name="moods" value="happy">
+            <label for="Happy">Happy</label><br>
+            <input type="radio" id="angry" name="moods" value="angry">
+            <label for="Angry">Angry</label><br>
+            <input type="radio" id="anxious" name="moods" value="anxious">
+            <label for="Anxious">Anxious</label>
+            <input type="radio" id="sad" name="moods" value="sad">
+            <label for="Sad">Sad</label>
+            <input type="radio" id="depressed" name="moods" value="depressed">
+            <label for="Depressed">Depressed</label>
+            <input type="radio" id="Full--List" name="moods" value="Full List">
+            <label for="Full List">Full List</label>
+        </fieldset>
+        <fieldset>
+            <label for="search">Search for Entries</label>
+            <input type="search" id="entry__search">
+        </fieldset>
+    </div>
     <article class="entryLog">
         
     </article>
